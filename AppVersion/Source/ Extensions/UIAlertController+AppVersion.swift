@@ -13,12 +13,12 @@ extension UIAlertController {
     }
 
     static func appVersionAlert(_ style: UIAlertController.Style, version: String) -> UIAlertController {
-        return UIAlertController(title: "Update Available", message: "Please update to version \(version) now.", preferredStyle: style)
+        return UIAlertController(title: "新しいアップデートがあります", message: "今すぐ \(version)にアップデートして新しい機能を体験しよう！", preferredStyle: style)
     }
 
     @discardableResult
     func addCancleAction(handler: AlertHandler? = nil) -> Self {
-        addAction(UIAlertAction(title: "Next Time", style: .cancel, handler: { _ in
+        addAction(UIAlertAction(title: "後で", style: .cancel, handler: { _ in
             guard let handler = handler else { return }
             handler()
         }))
@@ -27,7 +27,7 @@ extension UIAlertController {
 
     @discardableResult
     func addUpdateAction(handler: AlertHandler? = nil) -> Self {
-        addAction(UIAlertAction(title: "Update", style: .default, handler: { _ in
+        addAction(UIAlertAction(title: "アップデートする", style: .default, handler: { _ in
             guard let handler = handler else { return }
             handler()
         }))
@@ -36,7 +36,7 @@ extension UIAlertController {
 
     @discardableResult
     func addSkipAction(handler: AlertHandler? = nil) -> Self {
-        addAction(UIAlertAction(title: "Skip This Version", style: .default, handler: { _ in
+        addAction(UIAlertAction(title: "アップデートをスキップする", style: .default, handler: { _ in
             guard let handler = handler else { return }
             handler()
         }))
